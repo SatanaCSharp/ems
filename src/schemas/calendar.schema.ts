@@ -1,4 +1,4 @@
-import {Schema} from 'mongoose';
+import { Schema } from 'mongoose';
 import { HolidaySchema } from './holiday.schema';
 import { SickDaySchema } from './sick-day.schema';
 import { WorkingTimeSchema } from './working-time.schema';
@@ -15,6 +15,6 @@ export const CalendarSchema = new Schema({
     createdAt: {
         type: Date,
         required: true,
-        default: Date.now()
+        default: Date.now(),
     },
 });

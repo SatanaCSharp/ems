@@ -1,12 +1,18 @@
-import {Schema} from 'mongoose';
+import { Schema } from 'mongoose';
 
 export const HolidaySchema = new Schema({
     name: String,
-    startDate: Date,
-    endDate: Date,
+    startDate: {
+        type: Date,
+        required: true,
+    },
+    endDate: {
+        type: Date,
+        required: true,
+    },
     createdAt: {
         type: Date,
         required: true,
-        default: Date.now()
+        default: Date.now(),
     },
 });

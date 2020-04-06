@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { mongoProvider } from '../providers/mongo.provider';
+import { mongoProviders } from '../providers/mongo.providers';
 
 @Module({
-    providers: [...mongoProvider],
-    exports: [...mongoProvider],
+    providers: [...mongoProviders],
+    exports: [...mongoProviders],
 })
 export class MongoModule {}

@@ -1,8 +1,8 @@
 import { createConnection } from 'typeorm';
 import { typeOrmConfig } from '../config/database.config';
-import { MYSQL_CONNECTION } from '../constants/database.constant';
+import { MYSQL_CONNECTION } from '../constants/providers.constant';
 
-export const mySqlProvider = [
+export const mysqlProviders = [
     {
         provide: MYSQL_CONNECTION,
         useFactory: async () => createConnection(typeOrmConfig),
