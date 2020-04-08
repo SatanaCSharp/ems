@@ -1,6 +1,7 @@
 import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import { IPermission } from './interfaces/ipermission';
 
-export class Permissions {
+export class Permissions implements IPermission {
     @PrimaryGeneratedColumn()
     id: number;
 

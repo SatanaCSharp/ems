@@ -1,6 +1,7 @@
 import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ISalary } from './interfaces/isalary';
 
-export class Salaries  {
+export class Salaries implements ISalary {
     @PrimaryGeneratedColumn()
     id: number;
 

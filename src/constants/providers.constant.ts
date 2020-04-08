@@ -9,3 +9,4 @@ export const TEAM_MODEL = Symbol.for('TEAM_MODEL');
 export const USER_MODEL = Symbol.for('USER_MODEL');
 export const VACATION_MODEL = Symbol.for('VACATION_MODEL');
 export const WORKING_TIME_MODEL = Symbol.for('WORKING_TIME_MODEL');
+export const POTENTIAL_EMPLOYEE_MODEL = Symbol.for('POTENTIAL_EMPLOYEE_MODEL');

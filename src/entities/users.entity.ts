@@ -1,7 +1,7 @@
 import { BaseEntity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { Iuser } from './interfaces/iuser';
+import { IUser } from './interfaces/iuser';
 
-export class Users extends BaseEntity implements Iuser {
+export class Users extends BaseEntity implements IUser {
     @PrimaryGeneratedColumn()
     id: number;
 
