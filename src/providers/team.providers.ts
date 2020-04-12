@@ -1,5 +1,5 @@
 import { Connection } from 'mongoose';
-import { TeamSchema } from '../schemas/team.schema';
+import { TeamSchema } from '../database/schemas/team.schema';
 import { MONGO_CONNECTION, TEAM_MODEL } from '../constants/providers.constant';
 
 export const teamProviders = [

@@ -1,6 +1,6 @@
 import { MONGO_CONNECTION, WORKING_TIME_MODEL } from '../constants/providers.constant';
 import { Connection } from 'mongoose';
-import { WorkingTimeSchema } from '../schemas/working-time.schema';
+import { WorkingTimeSchema } from '../database/schemas/working-time.schema';
 
 export const workingTimeProviders = [
     {

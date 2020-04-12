@@ -8,7 +8,11 @@ export const typeOrmConfig: ConnectionOptions = {
     password: 'Existek2012',
     database: 'ems',
     entities: [`${__dirname}/../entities/*.entity.ts`],
-    synchronize: true
+    synchronize: true,
+    migrations: [`${__dirname}/../migrations/*.ts`],
+    cli: {
+        migrationsDir: `${__dirname}/../migrations`
+    }
 };
 
 export const MONGO_URL_CONNECTION = 'mongodb://localhost:27017/ems';

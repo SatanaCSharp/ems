@@ -1,5 +1,5 @@
 import { Connection } from 'mongoose';
-import { SickDaySchema } from '../schemas/sick-day.schema';
+import { SickDaySchema } from '../database/schemas/sick-day.schema';
 import { MONGO_CONNECTION, SICK_DAY_MODEL } from '../constants/providers.constant';
 
 export const sickDayProviders = [

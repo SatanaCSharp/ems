@@ -1,6 +1,6 @@
 import { MONGO_CONNECTION, VACATION_MODEL } from '../constants/providers.constant';
 import { Connection } from 'mongoose';
-import { VacationSchema } from '../schemas/vacation.schema';
+import { VacationSchema } from '../database/schemas/vacation.schema';
 
 export const vacationProviders = [
     {
