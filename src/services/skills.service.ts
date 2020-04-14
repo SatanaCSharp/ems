@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { ISkillService } from './interfaces/iskill.service';
 import { ISkillsRepository } from '../repositories/interfaces/iskills.repository';
 import { SkillDto } from '../dtos/skill/skill.dto';
@@ -6,13 +6,14 @@ import { CreateSkillDto } from '../dtos/skill/create-skill.dto';
 import { UpdateSkillDto } from '../dtos/skill/update-skill.dto';
 import { ISkillsMapper } from '../mappers/interfaces/iskills.mapper';
 import { ISkill } from '../database/schemas/interfaces/iskill';
+import { SKILLS_REPOSITORY } from '../constants/repositories.constants';
+import { SKILLS_MAPPER } from '../constants/mappers.constants';
 
 @Injectable()
 export class SkillsService implements ISkillService {
-
     constructor(
-        private skillsRepository: ISkillsRepository,
-        private skillsMapper: ISkillsMapper,
+        @Inject(SKILLS_REPOSITORY) private skillsRepository: ISkillsRepository,
+        @Inject(SKILLS_MAPPER) private skillsMapper: ISkillsMapper,
     ) {
     }
 
@@ -46,8 +47,8 @@ export class SkillsService implements ISkillService {
 
     public update = async (id: string, updateDto: UpdateSkillDto): Promise<SkillDto> => {
         try {
-            const skill: ISkill = await this.skillsRepository.update(id, updateDto);
-            return this.skillsMapper.mapToDTO(skill);
+            await this.skillsRepository.update(id, updateDto);
+            return this.findOne(id);
         } catch (e) {
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }

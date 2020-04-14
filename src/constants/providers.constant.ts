@@ -2,8 +2,6 @@ export const MYSQL_CONNECTION =  Symbol.for('MYSQL_CONNECTION');
 export const MONGO_CONNECTION = Symbol.for('MONGO_CONNECTION');
 
 export const SKILL_MODEL = Symbol.for('SKILL_MODEL');
-export const SKILL_REPOSITORY = Symbol.for('SKILL_REPOSITORY');
-
 
 export const HOLIDAY_MODEL = Symbol.for('HOLIDAY_MODEL');
 export const CALENDAR_MODEL = Symbol.for('CALENDAR_MODEL');

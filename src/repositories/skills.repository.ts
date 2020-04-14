@@ -23,10 +23,10 @@ export class SkillsRepository implements ISkillsRepository {
     }
 
     update(id: string, updateDto: UpdateSkillDto): Promise<ISkill> {
-        return this.skillModel.findByIdAndUpdate({'_id': id}, updateDto).exec();
+        return this.skillModel.updateOne({'_id': id}, updateDto).exec();
     }
 
     public delete = async (id: string): Promise<void> => {
-        await this.skillModel.findByIdAndRemove(id);
+        await this.skillModel.deleteOne({'_id': id});
     }
 }
