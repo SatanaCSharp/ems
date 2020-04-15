@@ -10,4 +10,6 @@ export interface IUser {
     phone?: number;
     skype?: string;
     password?: string;
+    balance: number;
+    salary: number;
 }

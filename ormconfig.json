@@ -1,0 +1,8 @@
+{
+  "entities": ["src/database/entities/*.entity.ts"],
+  "migrationsTableName": "custom_migration_table",
+  "migrations": ["src/database/migration/*.ts"],
+  "cli": {
+    "migrationsDir": "src/database/migrations"
+  }
+}

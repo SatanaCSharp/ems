@@ -1,5 +1,6 @@
-import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, JoinTable, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { IRole } from './interfaces/irole';
+import { Permissions } from './permissions.entity';
 
 export class Roles implements IRole {
     @PrimaryGeneratedColumn()
@@ -7,4 +8,8 @@ export class Roles implements IRole {
 
     @Column()
     name: string;
+
+    @OneToOne(type => Permissions)
+    @JoinTable()
+    permissions: Permissions;
 }
