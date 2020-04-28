@@ -3,8 +3,8 @@ import { ISkillsRepository } from './interfaces/iskills.repository';
 import { SKILL_MODEL } from '../utils/constants/model.constant';
 import { Model } from 'mongoose';
 import { ISkill } from './interfaces/iskill';
-import { CreateSkillDto } from './dtos/create-skill.dto';
-import { UpdateSkillDto } from './dtos/update-skill.dto';
+import { CreateSkillDto } from './dto/create-skill.dto';
+import { UpdateSkillDto } from './dto/update-skill.dto';
 import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()

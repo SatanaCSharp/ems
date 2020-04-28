@@ -4,10 +4,10 @@ import { SKILLS_REPOSITORY } from '../utils/constants/repositories.constants';
 import { SKILLS_MAPPER } from '../utils/constants/mappers.constants';
 import { ISkillsRepository } from './interfaces/iskills.repository';
 import { ISkillsMapper } from './interfaces/iskills.mapper';
-import { SkillDto } from './dtos/skill.dto';
+import { SkillDto } from './dto/skill.dto';
 import { ISkill } from './interfaces/iskill';
-import { CreateSkillDto } from './dtos/create-skill.dto';
-import { UpdateSkillDto } from './dtos/update-skill.dto';
+import { CreateSkillDto } from './dto/create-skill.dto';
+import { UpdateSkillDto } from './dto/update-skill.dto';
 
 @Injectable()
 export class SkillsService implements ISkillService {

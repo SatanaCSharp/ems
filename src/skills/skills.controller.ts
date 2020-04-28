@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, Inject, Param, Post, Put } from '@nestjs/common';
 import { SKILLS_SERVICE } from '../utils/constants/services.constants';
 import { ISkillService } from './interfaces/iskill.service';
-import { SkillDto } from './dtos/skill.dto';
-import { CreateSkillDto } from './dtos/create-skill.dto';
-import { UpdateSkillDto } from './dtos/update-skill.dto';
+import { SkillDto } from './dto/skill.dto';
+import { CreateSkillDto } from './dto/create-skill.dto';
+import { UpdateSkillDto } from './dto/update-skill.dto';
 
 @Controller('skills')
 export class SkillsController {

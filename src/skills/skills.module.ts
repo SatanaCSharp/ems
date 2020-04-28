@@ -27,5 +27,5 @@ import { MongooseModule } from '@nestjs/mongoose';
             useClass: SkillsRepository,
         }, ],
 })
-export class SkillModule {
+export class SkillsModule {
 }

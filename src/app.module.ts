@@ -1,14 +1,16 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmConfig, MONGO_URL_CONNECTION } from './utils/config/database.config';
+import { MONGO_URL_CONNECTION, mySqlConfig } from './utils/config/database.config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { SkillModule } from './skills/skill.module';
+import { SkillsModule } from './skills/skills.module';
+import { RolesModule } from './roles/roles.module';
+import { SequelizeModule } from '@nestjs/sequelize';
 
 @Module({
     imports: [
-        TypeOrmModule.forRoot(typeOrmConfig),
+        SequelizeModule.forRoot(mySqlConfig),
         MongooseModule.forRoot(MONGO_URL_CONNECTION),
-        SkillModule
+        SkillsModule,
+        RolesModule
     ],
 })
 

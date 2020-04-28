@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ISkillsMapper } from './interfaces/iskills.mapper';
-import { SkillDto } from './dtos/skill.dto';
+import { SkillDto } from './dto/skill.dto';
 import { ISkill } from './interfaces/iskill';
 
 
