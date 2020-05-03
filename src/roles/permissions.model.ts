@@ -29,15 +29,6 @@ export class Permission extends Model<Permission> implements IPermission {
     isProjectsDelete: boolean;
 
     @Column
-    isOfficesCreate: boolean;
-
-    @Column
-    isOfficesUpdate: boolean;
-
-    @Column
-    isOfficesDelete: boolean;
-
-    @Column
     isHolidaysCreate: boolean;
 
     @Column

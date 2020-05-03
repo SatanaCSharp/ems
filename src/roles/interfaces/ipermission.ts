@@ -1,5 +1,6 @@
 
 export interface IPermission {
+    id?: number,
     isEmployeesRead: boolean;
     isEmployeeCreate: boolean;
     isEmployeeUpdate: boolean;
@@ -8,9 +9,6 @@ export interface IPermission {
     isProjectsCreate: boolean;
     isProjectsUpdate: boolean;
     isProjectsDelete: boolean;
-    isOfficesCreate: boolean;
-    isOfficesUpdate: boolean;
-    isOfficesDelete: boolean;
     isHolidaysCreate: boolean;
     isHolidaysUpdate: boolean;
     isHolidaysDelete: boolean;

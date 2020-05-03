@@ -5,17 +5,29 @@ import { IRole } from './interfaces/irole';
 import { UpdateRoleDto } from './dto/update-role.dto';
 import { InjectModel } from '@nestjs/sequelize';
 import { Role } from './roles.model';
+import { Permission } from './permissions.model';
 
 @Injectable()
 export class RolesRepository implements IRolesRepository {
     constructor(@InjectModel(Role) private roleModel: typeof Role) {
     }
     public findAll(): Promise<IRole[]> {
-        return this.roleModel.findAll();
+        return this.roleModel.findAll({
+            include: [{
+                model: Permission
+            }]
+        });
     }
 
-    public findById(id: string): Promise<IRole> {
-        return this.roleModel.findByPk(id);
+    public findById(id: number): Promise<IRole> {
+        return this.roleModel.findOne({
+            where: {
+            id
+            },
+            include: [{
+                model: Permission
+            }]
+        });
     }
 
     public create(createDto: CreateRoleDto): Promise<IRole> {

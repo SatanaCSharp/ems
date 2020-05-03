@@ -1,4 +1,6 @@
 import { SequelizeModuleOptions } from '@nestjs/sequelize';
+import { Role } from '../../roles/roles.model';
+import { Permission } from '../../roles/permissions.model';
 
 export const mySqlConfig: SequelizeModuleOptions = {
     dialect: 'mysql',
@@ -7,7 +9,7 @@ export const mySqlConfig: SequelizeModuleOptions = {
     username: 'root',
     password: 'Existek2012',
     database: 'ems',
-    models: [],
+    models: [Role, Permission],
 };
 
 export const MONGO_URL_CONNECTION = 'mongodb://localhost:27017/ems';

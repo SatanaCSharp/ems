@@ -9,6 +9,7 @@ import { RoleDto } from './dto/role.dto';
 import { IRole } from './interfaces/irole';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
+import { PermissionDto } from './dto/permission.dto';
 
 
 @Injectable()
@@ -16,8 +17,9 @@ export class RolesService implements IRolesService {
     constructor(
         @Inject(ROLES_REPOSITORY) private rolesRepository: IRolesRepository,
         @Inject(PERMISSIONS_REPOSITORY) private permissionsRepository: IPermissionsRepository,
-        @Inject(ROLES_MAPPER) private rolesMapper: IRolesMapper
-    ) {}
+        @Inject(ROLES_MAPPER) private rolesMapper: IRolesMapper,
+    ) {
+    }
 
     public findAll = async (): Promise<RoleDto[]> => {
         try {
@@ -39,9 +41,12 @@ export class RolesService implements IRolesService {
 
     public create = async (createDto: CreateRoleDto): Promise<RoleDto> => {
         try {
-            const role: IRole =  await this.rolesRepository.create(createDto);
+            const role: IRole = await this.rolesRepository.create(createDto);
+            createDto.permission.RoleId = role.id;
+            await this.permissionsRepository.create(createDto.permission);
             return this.findOne(role.id);
         } catch (e) {
+            console.error(e);
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
     };
@@ -49,6 +54,8 @@ export class RolesService implements IRolesService {
     public update = async (id: number, updateDto: UpdateRoleDto): Promise<RoleDto> => {
         try {
             await this.rolesRepository.update(id, updateDto);
+            const role = await this.rolesRepository.findById(id);
+            await this.permissionsRepository.update(role.permission.id, updateDto.permission);
             return this.findOne(id);
         } catch (e) {
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);

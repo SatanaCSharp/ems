@@ -49,21 +49,6 @@ module.exports = {
                 allowNull: false,
                 defaultValue: false,
             },
-            isOfficesCreate: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isOfficesUpdate: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isOfficesDelete: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
             isHolidaysCreate: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,

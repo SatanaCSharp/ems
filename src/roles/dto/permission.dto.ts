@@ -1,4 +1,5 @@
 export class PermissionDto {
+    public id?: number;
     public isEmployeesRead: boolean;
     public isEmployeeCreate: boolean;
     public isEmployeeUpdate: boolean;
@@ -7,9 +8,6 @@ export class PermissionDto {
     public isProjectsCreate: boolean;
     public isProjectsUpdate: boolean;
     public isProjectsDelete: boolean;
-    public isOfficesCreate: boolean;
-    public isOfficesUpdate: boolean;
-    public isOfficesDelete: boolean;
     public isHolidaysCreate: boolean;
     public isHolidaysUpdate: boolean;
     public isHolidaysDelete: boolean;
