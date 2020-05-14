@@ -4,13 +4,15 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { SkillsModule } from './skills/skills.module';
 import { RolesModule } from './roles/roles.module';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { UserRolesModule } from './user-roles/user-roles.module';
 
 @Module({
     imports: [
         SequelizeModule.forRoot(mySqlConfig),
         MongooseModule.forRoot(MONGO_URL_CONNECTION),
         SkillsModule,
-        RolesModule
+        RolesModule,
+        UserRolesModule
     ],
 })
 
