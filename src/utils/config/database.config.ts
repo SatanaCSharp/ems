@@ -12,6 +12,7 @@ export const mySqlConfig: SequelizeModuleOptions = {
     password: 'Existek2012',
     database: 'ems',
     models: [Role, Permission, UserRole, User],
+    logging: false
 };
 
 export const MONGO_URL_CONNECTION = 'mongodb://localhost:27017/ems';

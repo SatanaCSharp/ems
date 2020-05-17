@@ -65,6 +65,28 @@ export class UsersRepository implements IUsersRepository {
         });
     }
 
+    findByEmail(email: string): Promise<IUser | null> {
+        return this.userModel.findOne({
+            where: {
+                email
+            },
+            include: [
+                {
+                    model: this.userRoleModel,
+                    include: [
+                        {
+                            model: this.roleModel,
+                            include: [
+                                {
+                                    model: this.permissionModel,
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        });
+    }
     public create(createDto: CreateUserDto): Promise<IUser> {
         return this.userModel.create(createDto, {
             include: [

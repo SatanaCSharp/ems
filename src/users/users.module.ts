@@ -33,6 +33,16 @@ import { UsersController } from './users.controller';
             useClass: UsersService,
         },
     ],
+    exports: [
+        {
+            provide: USERS_REPOSITORY,
+            useClass: UsersRepository,
+        },
+        {
+            provide: USERS_MAPPER,
+            useClass: UsersMapper,
+        },
+    ]
 })
 export class UsersModule {
 }

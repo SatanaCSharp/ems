@@ -26,6 +26,7 @@ export class UsersService implements IUsersService {
             const users: IUser[] = await this.usersRepository.findAll();
             return this.usersMapper.mapToDTOs(users);
         } catch (e) {
+            console.log(e);
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -48,6 +49,7 @@ export class UsersService implements IUsersService {
             await this.userRolesRepository.create({UserId: user.id, RoleId: createDto.RoleId});
             return this.usersMapper.mapToDTO(user);
         } catch (e) {
+            console.log(e);
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
