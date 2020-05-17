@@ -8,7 +8,4 @@ export class BaseUserDto {
     public additionalEmail?: string;
     public phone: number;
     public skype: string;
-    public password: string;
-    public salary: number;
-    public RoleId: number;
 }

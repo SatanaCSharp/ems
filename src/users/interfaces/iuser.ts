@@ -1,3 +1,4 @@
+import { IUserRole } from '../../user-roles/interfaces/iuser-role';
 
 export interface IUser {
      id?: number;
@@ -12,4 +13,5 @@ export interface IUser {
      skype: string;
      password: string;
      salary: number;
+     userRoles: IUserRole[]
 }

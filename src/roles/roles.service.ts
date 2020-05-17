@@ -9,7 +9,6 @@ import { RoleDto } from './dto/role.dto';
 import { IRole } from './interfaces/irole';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
-import { PermissionDto } from './dto/permission.dto';
 
 
 @Injectable()

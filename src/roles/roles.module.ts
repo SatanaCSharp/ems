@@ -31,6 +31,6 @@ import { PermissionsRepository } from './permissions.repository';
             provide: ROLES_SERVICE,
             useClass: RolesService,
         },
-    ]
+    ],
 })
 export class RolesModule {}

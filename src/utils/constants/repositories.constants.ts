@@ -1,3 +1,5 @@
 export const SKILLS_REPOSITORY = Symbol.for('SKILLS_REPOSITORY');
 export const PERMISSIONS_REPOSITORY = Symbol.for('PERMISSIONS_REPOSITORY');
 export const ROLES_REPOSITORY = Symbol.for('ROLES_REPOSITORY');
+export const USER_ROLES_REPOSITORY = Symbol.for('USER_ROLES_REPOSITORY');
+export const USERS_REPOSITORY = Symbol.for('USERS_REPOSITORY');
