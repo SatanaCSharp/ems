@@ -14,8 +14,7 @@ export class SkillsService implements ISkillService {
     constructor(
         @Inject(SKILLS_REPOSITORY) private skillsRepository: ISkillsRepository,
         @Inject(SKILLS_MAPPER) private skillsMapper: ISkillsMapper,
-    ) {
-    }
+    ) {}
 
     public findAll = async (): Promise<SkillDto[]> => {
         try {

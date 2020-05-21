@@ -7,6 +7,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { UserRolesModule } from './user-roles/user-roles.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { TeamsModule } from './teams/teams.module';
 
 @Module({
     imports: [
@@ -17,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
         UserRolesModule,
         UsersModule,
         AuthModule,
+        TeamsModule,
     ],
 })
 
