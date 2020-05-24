@@ -88,23 +88,7 @@ export class UsersRepository implements IUsersRepository {
         });
     }
     public create(createDto: CreateUserDto): Promise<IUser> {
-        return this.userModel.create(createDto, {
-            include: [
-                {
-                    model: this.userRoleModel,
-                    include: [
-                        {
-                            model: this.roleModel,
-                            include: [
-                                {
-                                    model: this.permissionModel,
-                                },
-                            ],
-                        },
-                    ],
-                },
-            ],
-        });
+        return this.userModel.create(createDto);
     }
 
     public delete = async (id: string | number): Promise<void> => {

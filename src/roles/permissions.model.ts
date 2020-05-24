@@ -17,16 +17,16 @@ export class Permission extends Model<Permission> implements IPermission {
     isEmployeeDelete: boolean;
 
     @Column
-     isProjectsRead: boolean;
+    isTeamsRead: boolean;
 
     @Column
-    isProjectsCreate: boolean;
+    isTeamsCreate: boolean;
 
     @Column
-    isProjectsUpdate: boolean;
+    isTeamsUpdate: boolean;
 
     @Column
-    isProjectsDelete: boolean;
+    isTeamsDelete: boolean;
 
     @Column
     isHolidaysCreate: boolean;
@@ -44,15 +44,6 @@ export class Permission extends Model<Permission> implements IPermission {
     isSalariesUpdate: boolean;
 
     @Column
-    isSalariesCreate: boolean;
-
-    @Column
-    isVacationApproveRead: boolean;
-
-    @Column
-    isVacationApproveUpdate: boolean;
-
-    @Column
     isPotentialEmployeesRead: boolean;
 
     @Column
@@ -65,22 +56,13 @@ export class Permission extends Model<Permission> implements IPermission {
     isPotentialEmployeesDelete: boolean;
 
     @Column
-    isSickDaysDelete: boolean;
-
-    @Column
-    isSickDaysUpdate: boolean;
-
-    @Column
-    isSickDaysCreate: boolean;
+    isSickDaysRead: boolean;
 
     @Column
     isWorkingTimesRead: boolean;
 
     @Column
-    isWorkingTimesUpdate: boolean;
-
-    @Column
-    isWorkingTimesDelete: boolean;
+    isVacationRead: boolean;
 
     @Column
     isRoles: boolean;

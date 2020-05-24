@@ -1,4 +1,4 @@
-import { IsEmail, IsString, Matches, MaxLength, Min, MinLength } from 'class-validator';
+import { IsEmail, IsString } from 'class-validator';
 
 export class AuthCredentialsDto {
     @IsString()

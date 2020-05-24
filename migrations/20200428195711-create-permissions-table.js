@@ -29,22 +29,22 @@ module.exports = {
                 allowNull: false,
                 defaultValue: false,
             },
-            isProjectsRead: {
+            isTeamsRead: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
             },
-            isProjectsCreate: {
+            isTeamsCreate: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
             },
-            isProjectsUpdate: {
+            isTeamsUpdate: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
             },
-            isProjectsDelete: {
+            isTeamsDelete: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
@@ -74,21 +74,6 @@ module.exports = {
                 allowNull: false,
                 defaultValue: false,
             },
-            isSalariesCreate: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isVacationApproveRead: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isVacationApproveUpdate: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
             isPotentialEmployeesRead: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
@@ -109,32 +94,12 @@ module.exports = {
                 allowNull: false,
                 defaultValue: false,
             },
-            isSickDaysDelete: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isSickDaysUpdate: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isSickDaysCreate: {
+            isSickDaysRead: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
             },
             isWorkingTimesRead: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isWorkingTimesUpdate: {
-                type: Sequelize.BOOLEAN,
-                allowNull: false,
-                defaultValue: false,
-            },
-            isWorkingTimesDelete: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,
@@ -145,6 +110,11 @@ module.exports = {
                 defaultValue: false,
             },
             isVacationBalanceUpdate: {
+                type: Sequelize.BOOLEAN,
+                allowNull: false,
+                defaultValue: false,
+            },
+            isVacationRead: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
                 defaultValue: false,

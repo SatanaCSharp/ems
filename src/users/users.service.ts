@@ -47,7 +47,7 @@ export class UsersService implements IUsersService {
             createDto.password = await bcrypt.hash(createDto.password, salt);
             const user: IUser = await this.usersRepository.create(createDto);
             await this.userRolesRepository.create({UserId: user.id, RoleId: createDto.RoleId});
-            return this.usersMapper.mapToDTO(user);
+            return await this.findOne(user.id);
         } catch (e) {
             console.log(e);
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
