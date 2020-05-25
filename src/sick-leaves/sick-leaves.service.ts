@@ -13,7 +13,9 @@ export class SickLeavesService {
     constructor(
         @Inject(SICK_LEAVES_MAPPER) private sickLeavesMapper: ISickLeavesMapper,
         @Inject(SICK_LEAVES_REPOSITORY) private sickLeavesRepository: ISickLeavesRepository,
-    ) {}
+    ) {
+    }
+
     public findAll = async (): Promise<SickLeaveDto[]> => {
         try {
             const sickLeaves: ISickLeave[] = await this.sickLeavesRepository.findAll();
@@ -21,7 +23,7 @@ export class SickLeavesService {
         } catch (e) {
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    };
 
     public findOne = async (id: string | number): Promise<SickLeaveDto> => {
         try {
@@ -30,7 +32,7 @@ export class SickLeavesService {
         } catch (e) {
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    };
 
     public create = async (createDto: CreateSickLeaveDto): Promise<SickLeaveDto> => {
         try {
@@ -39,7 +41,7 @@ export class SickLeavesService {
         } catch (e) {
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    };
 
     public update = async (id: string | number, updateDto: UpdateSickLeaveDto): Promise<SickLeaveDto> => {
         try {
@@ -48,7 +50,7 @@ export class SickLeavesService {
         } catch (e) {
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    };
 
     public delete = async (id: string | number): Promise<void> => {
         try {
@@ -56,5 +58,5 @@ export class SickLeavesService {
         } catch (e) {
             throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    };
 }

@@ -1,5 +1,4 @@
 import { UserTeamDto } from '../../teams/dto/user-team.dto';
-import { ISickLeave } from '../interfaces/isick-leave';
 
 export class SickLeaveDto {
     public startDate: Date;
@@ -7,7 +6,7 @@ export class SickLeaveDto {
     public description: string;
     public user: UserTeamDto;
 
-    constructor(sickLeave: ISickLeave) {
+    constructor(sickLeave: SickLeaveDto) {
         this.startDate = sickLeave.startDate;
         this.endDate = sickLeave.endDate;
         this.description = sickLeave.description;
