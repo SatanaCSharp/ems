@@ -8,6 +8,9 @@ import { UserRolesModule } from './user-roles/user-roles.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { TeamsModule } from './teams/teams.module';
+import { SickLeavesModule } from './sick-leaves/sick-leaves.module';
+import { WorkingTimesModule } from './working-times/working-times.module';
+import { HolidaysModule } from './holidays/holidays.module';
 
 @Module({
     imports: [
@@ -19,7 +22,10 @@ import { TeamsModule } from './teams/teams.module';
         UsersModule,
         AuthModule,
         TeamsModule,
-    ],
+        SickLeavesModule,
+        WorkingTimesModule,
+        HolidaysModule,
+    ]
 })
 
 export class AppModule {}

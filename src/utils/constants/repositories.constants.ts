@@ -4,3 +4,5 @@ export const ROLES_REPOSITORY = Symbol.for('ROLES_REPOSITORY');
 export const USER_ROLES_REPOSITORY = Symbol.for('USER_ROLES_REPOSITORY');
 export const USERS_REPOSITORY = Symbol.for('USERS_REPOSITORY');
 export const TEAMS_REPOSITORY = Symbol.for('TEAMS_REPOSITORY');
+export const HOLIDAYS_REPOSITORY = Symbol.for('HOLIDAYS_REPOSITORY');
+export const SICK_LEAVES_REPOSITORY = Symbol.for('SICK_LEAVES_REPOSITORY');
