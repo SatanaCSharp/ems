@@ -8,6 +8,7 @@ import { WORKING_TIMES_MAPPER } from '../utils/constants/mappers.constants';
 import { WORKING_TIMES_REPOSITORY } from '../utils/constants/repositories.constants';
 import { WorkingTimesService } from './working-times.service';
 import { WorkingTimesMapper } from './working-times.mapper';
+import { WorkingTimesRepository } from './working-times.repository';
 
 
 @Module({
@@ -24,7 +25,7 @@ import { WorkingTimesMapper } from './working-times.mapper';
         },
         {
             provide: WORKING_TIMES_REPOSITORY,
-            useClass: WorkingTimesMapper,
+            useClass: WorkingTimesRepository,
         },
     ],
 })
