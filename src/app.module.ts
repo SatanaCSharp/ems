@@ -11,6 +11,8 @@ import { TeamsModule } from './teams/teams.module';
 import { SickLeavesModule } from './sick-leaves/sick-leaves.module';
 import { WorkingTimesModule } from './working-times/working-times.module';
 import { HolidaysModule } from './holidays/holidays.module';
+import { VacationBalancesModule } from './vacation-balances/vacation-balances.module';
+import { VacationsModule } from './vacations/vacations.module';
 
 @Module({
     imports: [
@@ -19,6 +21,8 @@ import { HolidaysModule } from './holidays/holidays.module';
         SkillsModule,
         RolesModule,
         UserRolesModule,
+        VacationsModule,
+        VacationBalancesModule,
         UsersModule,
         AuthModule,
         TeamsModule,

@@ -1,4 +1,5 @@
 import { PermissionDto } from '../../roles/dto/permission.dto';
+import { VacationBalanceDto } from '../../vacation-balances/dto/vacation-balance.dto';
 
 export class UserDto {
     public id?: number;
@@ -13,6 +14,7 @@ export class UserDto {
     public skype: string;
     public role?: string;
     public permission?: PermissionDto;
+    public balance?: VacationBalanceDto;
     constructor(user: UserDto) {
         this.id = user.id;
         this.firstName = user.firstName;
@@ -26,5 +28,6 @@ export class UserDto {
         this.skype = user.skype;
         this.role = user.role;
         this.permission = user.permission;
+        this.balance = user.balance;
     }
 }

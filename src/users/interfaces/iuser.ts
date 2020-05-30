@@ -1,4 +1,5 @@
 import { IUserRole } from '../../user-roles/interfaces/iuser-role';
+import { IVacationBalance } from '../../vacation-balances/interfaces/ivacation-balance';
 
 export interface IUser {
      id?: number;
@@ -14,4 +15,5 @@ export interface IUser {
      password: string;
      salary: number;
      userRoles: IUserRole[]
+     balance: IVacationBalance
 }

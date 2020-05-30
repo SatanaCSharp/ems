@@ -12,11 +12,14 @@ import { UserRolesModule } from '../user-roles/user-roles.module';
 import { USERS_MAPPER } from '../utils/constants/mappers.constants';
 import { UsersMapper } from './users.mapper';
 import { UsersController } from './users.controller';
+import { VacationBalancesModule } from '../vacation-balances/vacation-balances.module';
+import { VacationBalance } from '../vacation-balances/vacation-balances.model';
 
 @Module({
     imports: [
-        SequelizeModule.forFeature([Role, Permission, User, UserRole]),
+        SequelizeModule.forFeature([Role, Permission, User, UserRole, VacationBalance]),
         UserRolesModule,
+        VacationBalancesModule
     ],
     controllers: [UsersController],
     providers: [

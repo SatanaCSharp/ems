@@ -8,6 +8,7 @@ import { User } from './users.model';
 import { Role } from '../roles/roles.model';
 import { UserRole } from '../user-roles/user-roles.model';
 import { Permission } from '../roles/permissions.model';
+import { VacationBalance } from '../vacation-balances/vacation-balances.model';
 
 @Injectable()
 export class UsersRepository implements IUsersRepository {
@@ -16,6 +17,7 @@ export class UsersRepository implements IUsersRepository {
         @InjectModel(UserRole) private userRoleModel: typeof UserRole,
         @InjectModel(Role) private roleModel: typeof Role,
         @InjectModel(Permission) private permissionModel: typeof Permission,
+        @InjectModel(VacationBalance) private vacationBalancesModel: typeof VacationBalance,
     ) {
     }
 
@@ -37,6 +39,9 @@ export class UsersRepository implements IUsersRepository {
                             ],
                         },
                     ],
+                },
+                {
+                    model: this.vacationBalancesModel,
                 },
             ],
         });
@@ -61,6 +66,9 @@ export class UsersRepository implements IUsersRepository {
                         },
                     ],
                 },
+                {
+                    model: this.vacationBalancesModel,
+                },
             ],
         });
     }
@@ -68,7 +76,7 @@ export class UsersRepository implements IUsersRepository {
     findByEmail(email: string): Promise<IUser | null> {
         return this.userModel.findOne({
             where: {
-                email
+                email,
             },
             include: [
                 {
@@ -87,6 +95,7 @@ export class UsersRepository implements IUsersRepository {
             ],
         });
     }
+
     public create(createDto: CreateUserDto): Promise<IUser> {
         return this.userModel.create(createDto);
     }

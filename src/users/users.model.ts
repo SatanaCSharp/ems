@@ -1,6 +1,7 @@
-import { Column,  HasMany, Model, Table } from 'sequelize-typescript';
+import { Column, HasMany, HasOne, Model, Table } from 'sequelize-typescript';
 import { IUser } from './interfaces/iuser';
 import { UserRole } from '../user-roles/user-roles.model';
+import { VacationBalance } from '../vacation-balances/vacation-balances.model';
 
 @Table
 export class User extends Model<User> implements IUser {
@@ -30,4 +31,7 @@ export class User extends Model<User> implements IUser {
 
     @HasMany(() => UserRole)
     userRoles: UserRole[]
+
+    @HasOne(() => VacationBalance)
+    balance: VacationBalance
 }
