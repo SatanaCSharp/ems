@@ -1,14 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { ActualizeBalanceParams, IVacationBalanceCalculatorService } from './interfaces/ivacation-balance-calculator.service';
-import moment from 'moment';
+import * as moment from 'moment';
 
 @Injectable()
 export class VacationsBalanceCalculatorService implements IVacationBalanceCalculatorService {
     public getDurationOfVacation(startDate: Date, endDate: Date): number {
         const INCLUDING_FIRST_DAY = 1;
         const startDateOfVacation = moment(startDate);
-        const endDateOfVacation = moment(startDate);
-        return endDateOfVacation.diff(startDateOfVacation, 'days') + INCLUDING_FIRST_DAY;
+        const endDateOfVacation = moment(endDate);
+        const duration = endDateOfVacation.diff(startDateOfVacation, 'days');
+        return duration + INCLUDING_FIRST_DAY;
     }
 
     public actualizeBalance({balanceDto, durationOfVacationBeforeUpdate, actualDurationOfVacation}: ActualizeBalanceParams): void {
