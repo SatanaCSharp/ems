@@ -13,6 +13,7 @@ import { WorkingTimesModule } from './working-times/working-times.module';
 import { HolidaysModule } from './holidays/holidays.module';
 import { VacationBalancesModule } from './vacation-balances/vacation-balances.module';
 import { VacationsModule } from './vacations/vacations.module';
+import { PotentialEmployeesModule } from './potential-employees/potential-employees.module';
 
 @Module({
     imports: [
@@ -29,6 +30,7 @@ import { VacationsModule } from './vacations/vacations.module';
         SickLeavesModule,
         WorkingTimesModule,
         HolidaysModule,
+        PotentialEmployeesModule,
     ]
 })
 
